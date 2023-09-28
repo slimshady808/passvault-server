@@ -186,3 +186,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True 
+
+# settings.py
+AUTH_USER_MODEL = 'account.UserProfile'
+
+CORS_ALLOWED_ORIGINS = [
+    # 'http://localhost:5173',
+    'http://localhost:3000',
+   
+]
