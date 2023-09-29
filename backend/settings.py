@@ -4,6 +4,7 @@ from decouple import config
 from datetime import timedelta
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -134,16 +135,38 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # Database settings
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config('DB_ENGINE'),
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PASSWORD'),
+#         'HOST': config('DB_HOST'),
+#     }
+# }
+
+# DATABASES = {
+#   "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+
+# }
+
+# DATABASE_URL = os.environ.get("DATABASE_URL")
+# print("DATABASE_URL:", DATABASE_URL)
+
+# DATABASES = {
+#     "default": dj_database_url.parse(DATABASE_URL)
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'password_manager_0w0i',
+        'USER': 'password_manager_0w0i_user',
+        'PASSWORD': 'MWEL3ZYDZeXoSqMEdUgRDkVC80tMYYsc',
+        'HOST': 'dpg-ckb9bt7s0fgc738in0tg-a.oregon-postgres.render.com',
+        'PORT': '',  # Leave it empty for the default PostgreSQL port (5432)
     }
 }
-
 
 
 # Password validation
